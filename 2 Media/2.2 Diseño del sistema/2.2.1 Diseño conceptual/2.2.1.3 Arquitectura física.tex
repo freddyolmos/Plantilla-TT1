@@ -1,28 +1,27 @@
 \subsection{Arquitectura física}
 
-\begin{description}
-  \item[\textbf{Sistema estructural :}] bastidor/placas, pinzas–acoples 3D, montura r\'igida de c\'amara, guardas y canalizaci\'on de cableado.
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, itemsep=2pt]
+  \item \textbf{Sistema estructural (S0):} bastidor/placas, pinzas–acoples 3D, montura r\'igida de c\'amara, guardas y canalizaci\'on de cableado.
 
-  \item[\textbf{Sistema de energ\'ia :}] fuente 24~V, convertidores DC--DC 24$\rightarrow$5~V y 5$\rightarrow$3.3~V, \emph{E-Stop}, fusibles/TVS y tierra com\'un; distribuci\'on selectiva (accionamientos vs.\ l\'ogica).
+  \item \textbf{Sistema de energ\'ia (S1):} fuente 24~V, convertidores DC--DC 24$\rightarrow$5~V y 5$\rightarrow$3.3~V, \emph{E-Stop}, fusibles/TVS y tierra com\'un; distribuci\'on selectiva (accionamientos vs.\ l\'ogica).
 
-  \item[\textbf{Sistema central de manejo del comportamiento :}]
-    \begin{itemize}
+  \item \textbf{Sistema central de manejo del comportamiento (S2):}
+    \begin{enumerate}[label=\alph*) , leftmargin=1.2cm, itemsep=1pt]
       \item \textit{Administraci\'on del conocimiento:} base de datos de algoritmos CFOP e inversos.
       \item \textit{Aprendizaje (opcional):} modos de entrenamiento, m\'etricas y adaptaci\'on.
       \item \textit{Percepci\'on:} validaci\'on de estados con visi\'on (OpenCV).
-    \end{itemize}
+    \end{enumerate}
 
-  \item[\textbf{Sistema de procesamiento de datos (S3 $\leftrightarrow$ A2):}] GUI/HMI y comunicaciones (UART/I\textsuperscript{2}C con MCU), an\'alisis/sintonizaci\'on (umbral de color, filtros), almacenamiento (SD/SSD) y exportaci\'on de m\'etricas.
+  \item \textbf{Sistema de procesamiento de datos (S3):} GUI/HMI y comunicaciones (UART/I\textsuperscript{2}C con MCU), an\'alisis/sintonizaci\'on (umbral de color, filtros), almacenamiento (SD/SSD) y exportaci\'on de m\'etricas.
 
-  \item[\textbf{Sistemas propios del SoI:}]
-    \begin{itemize}
-      \item \textbf{Manipulaci\'on del cubo (S4 $\leftrightarrow$ A5):} drivers$\times$6, motores/servos$\times$6, unidades de giro para 6 caras, pinzas/homing, sensores (fin de carrera/encoders).
-      \item \textbf{Entorno de visi\'on (S5 $\leftrightarrow$ A4):} c\'amara MIPI/USB, iluminaci\'on difusa, plantilla/pose y par\'ametros de captura (fps/res).
-    \end{itemize}
-\end{description}
+  \item \textbf{Sistemas propios del sistema (S4--S5):}
+    \begin{enumerate}[label=\alph*) , leftmargin=1.2cm, itemsep=1pt]
+      \item \textbf{Manipulaci\'on del cubo (S4):} drivers$\times$6, motores/servos$\times$6, unidades de giro para 6 caras, pinzas/homing, sensores (fin de carrera/encoders).
+      \item \textbf{Entorno de visi\'on (S5):} c\'amara MIPI/USB, iluminaci\'on difusa, plantilla/pose y par\'ametros de captura (fps/res).
+    \end{enumerate}
+\end{enumerate}
 
-\noindent
-La asignaci\'on S0--S5 $\leftrightarrow$ A1--A5 preserva la trazabilidad con el IDEF0 y los requisitos:
-S1 (Energ\'ia) $\rightarrow$ alimenta S2/S3/S4/S5; S2/S3 coordinan y validan; S4 ejecuta giros; S5 provee realimentaci\'on.
+
+
 
 
