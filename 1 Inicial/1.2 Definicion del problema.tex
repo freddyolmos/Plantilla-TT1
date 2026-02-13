@@ -1,13 +1,13 @@
 \section{Definición del problema}
 
 
-En el aprendizaje del método \textbf{Fridrich/CFOP} (Cross–F2L–OLL–PLL) para el cubo Rubik 3×3, el principal cuello de botella no es la explicación teórica de los algoritmos sino la \textbf{práctica deliberada y repetible de casos específicos.} Hoy, quien entrena debe \textbf{preparar manualmente} el cubo hasta obtener un caso (p. ej., un OLL o un PLL concretos), lo cual consume tiempo, introduce errores y \textbf{reduce el volumen efectivo de práctica} por sesión. La evidencia sobre práctica motora muestra que \textbf{incrementar repeticiones de calidad} acelera la ejecución, favorece la automatización del gesto y \textbf{disminuye la carga cognitiva}[1]-[3], pero esto depende críticamente de poder \textbf{repetir el mismo caso de forma confiable} (las condiciones de práctica importan).
+En el aprendizaje del método \textbf{Fridrich/CFOP} (Cross–F2L–OLL–PLL) para el cubo Rubik 3×3, el principal cuello de botella no es la explicación teórica de los algoritmos sino la \textbf{práctica deliberada y repetible de casos específicos.} Hoy, quien entrena debe \textbf{preparar manualmente} el cubo hasta obtener un caso (p. ej., un OLL o un PLL concretos), lo cual consume tiempo, introduce errores y \textbf{reduce el volumen efectivo de práctica} por sesión. La evidencia sobre práctica motora muestra que \textbf{incrementar repeticiones de calidad} acelera la ejecución, favorece la automatización del gesto y \textbf{disminuye la carga cognitiva} \cite{haith2019motorlearning,oppici2021deliberate,du2022habits}, pero esto depende críticamente de poder \textbf{repetir el mismo caso de forma confiable} (las condiciones de práctica importan).
 
-Existen robots que \textbf{resuelven} el cubo extremo a extremo (visión del estado → cálculo de solución → ejecución), pero \textbf{no están orientados al entrenamiento por bloques} ni a \textbf{preparar y verificar un caso humano-estructurado} (p. ej., “OLL 21” o “PLL T”) de manera rápida y repetible; su objetivo es resolver en el menor número de movimientos, no respetar etapas CFOP ni facilitar repeticiones controladas [4]-[7].
+Existen robots que \textbf{resuelven} el cubo extremo a extremo (visión del estado → cálculo de solución → ejecución), pero \textbf{no están orientados al entrenamiento por bloques} ni a \textbf{preparar y verificar un caso humano-estructurado} (p. ej., “OLL 21” o “PLL T”) de manera rápida y repetible; su objetivo es resolver en el menor número de movimientos, no respetar etapas CFOP ni facilitar repeticiones controladas \cite{kociemba1992imptwophase,kociemba1992twophase,time2014lego,rokicki2014diameter}.
 
-Además, cuando se intenta incorporar \textbf{visión por computadora} para verificar el estado antes/después de los giros, surgen retos prácticos: \textbf{variación de iluminación}, \textbf{clasificación robusta de colores} en stickers, segmentación por contornos y umbrales en espacios HSV/Lab, así como consistencia de lectura entre ciclos [8]-[10]. Estos retos han sido reportados en implementaciones abiertas y preguntas técnicas frecuentes de la comunidad.
+Además, cuando se intenta incorporar \textbf{visión por computadora} para verificar el estado antes/después de los giros, surgen retos prácticos: \textbf{variación de iluminación}, \textbf{clasificación robusta de colores} en stickers, segmentación por contornos y umbrales en espacios HSV/Lab, así como consistencia de lectura entre ciclos \cite{khan2020opencv,appapogu2016recognition,hack2015localization}. Estos retos han sido reportados en implementaciones abiertas y preguntas técnicas frecuentes de la comunidad.
 
-Por otra parte, desde la perspectiva de \textbf{educación mecatrónica y HCI}, está documentado que los sistemas didácticos con \textbf{interfaz gráfica + feedback sensorial} (p. ej., visión) mejoran la motivación y la efectividad del aprendizaje en prácticas de ingeniería, lo que sugiere valor pedagógico para un \textbf{entrenador CFOP} con verificación automática del estado [11]-[12].
+Por otra parte, desde la perspectiva de \textbf{educación mecatrónica y HCI}, está documentado que los sistemas didácticos con \textbf{interfaz gráfica + feedback sensorial} (p. ej., visión) mejoran la motivación y la efectividad del aprendizaje en prácticas de ingeniería, lo que sugiere valor pedagógico para un \textbf{entrenador CFOP} con verificación automática del estado \cite{guerreroosuna2023educational,aljuboori2022application}.
 
 \textbf{Problema a resolver}. No existe (al alcance del estudiante promedio) un \textbf{sistema mecatrónico abierto específico} para entrenamiento \textbf{CFOP por casos}, capaz de:
 
@@ -17,7 +17,7 @@ Por otra parte, desde la perspectiva de \textbf{educación mecatrónica y HCI}, 
 
 \textbf{permitir repeticiones rápidas y seguras} con precisión angular y consistencia mecánica suficientes.
 
-\textbf{Consecuencia.} Sin esta herramienta, el estudiante \textbf{pierde tiempo} preparando el caso, \textbf{reduce el número de repeticiones útiles}, introduce errores al montar el estado y limita su progreso hacia la \textbf{automatización} y \textbf{disminución de carga cognitiva} propias del dominio experto [1]-[3].
+\textbf{Consecuencia.} Sin esta herramienta, el estudiante \textbf{pierde tiempo} preparando el caso, \textbf{reduce el número de repeticiones útiles}, introduce errores al montar el estado y limita su progreso hacia la \textbf{automatización} y \textbf{disminución de carga cognitiva} propias del dominio experto \cite{haith2019motorlearning,oppici2021deliberate,du2022habits}.
 
 \textbf{Reto de ingeniería}. Diseñar e integrar un \textbf{Sistema Mecatrónico de Entrenamiento CFOP} que combine:
 
@@ -30,5 +30,4 @@ Por otra parte, desde la perspectiva de \textbf{educación mecatrónica y HCI}, 
 \textbf{Control} temporizado y sincronizado con visión;
 
 \textbf{Visión por computadora} robusta a iluminación/colores;
-y validar su \textbf{precisión angular, tiempo de preparación} por caso y \textbf{tasa de éxito} en ciclos repetidos. Referencias de robots resolutores y prácticas de diseño mecánico reportan la importancia de reducir juego mecánico, seleccionar materiales/rodamientos adecuados y proteger la transmisión del par [13]-[14].
-
+y validar su \textbf{precisión angular, tiempo de preparación} por caso y \textbf{tasa de éxito} en ciclos repetidos. Referencias de robots resolutores y prácticas de diseño mecánico reportan la importancia de reducir juego mecánico, seleccionar materiales/rodamientos adecuados y proteger la transmisión del par \cite{budynas2011shigley,shigley2004handbook}.

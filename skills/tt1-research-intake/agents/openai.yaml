@@ -1,0 +1,4 @@
+interface:
+  display_name: "TT1 Research Intake"
+  short_description: "Convert papers into thesis evidence"
+  default_prompt: "Find, filter, and convert sources into BibTeX and antecedentes rows for this TT1 project."
