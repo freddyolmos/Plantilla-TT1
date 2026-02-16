@@ -1,0 +1,4 @@
+interface:
+  display_name: "TT1 LaTeX Thesis"
+  short_description: "Write and validate TT1 in LaTeX"
+  default_prompt: "Update TT1 thesis content in LaTeX and keep compilation and citations healthy."

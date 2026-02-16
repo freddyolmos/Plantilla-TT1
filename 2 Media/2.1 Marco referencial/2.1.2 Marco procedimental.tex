@@ -1,32 +1,42 @@
-%%Metodología mecatrónica
+%% Metodologia mecatronica
 
-\section{Marco prodedimental}
-
+\section{Marco procedimental}
 
 \subsection{Definición de la metodología}
 
-El presente trabajo utilizará como referencia la metodología del modelo sistemático para sistemas mecatrónicos ``V'' o  VDI-2206 \cite{gausemeier2003new} dado que permite retroalimentación continua e integra de manera multidisciplinaria. Este modelo que sigue una secuencia en V (de ahí su nombre) que inicia con las necesidades del cliente o del proyecto y finaliza con la producción para la manufactura. El trayecto de este proceso está dividido en etapas o módulos que al final serán integrados en uno solo, trabajando sinérgicamente para cumplir las necesidades y requerimientos, el cual consta de las siguientes etapas (ver Figura \ref{fig:vdi-modelo}):
+El presente trabajo toma como referencia la directriz VDI-2206 para el diseño de
+sistemas mecatrónicos \cite{gausemeier2003new}, debido a que permite integrar de
+manera iterativa y multidisciplinaria los dominios mecánico, electrónico, de control e
+informático. Este enfoque organiza el desarrollo en forma de ``V'': se parte de las
+necesidades y requerimientos del sistema, se desciende al diseño por dominios y se
+asciende a la integración, verificación y validación del sistema completo.
 
+En el contexto del robot entrenador CFOP, la VDI-2206 permite mantener trazabilidad
+entre necesidad, requerimiento, arquitectura, implementación y evidencia de cumplimiento.
+La Figura~\ref{fig:vdi2206} muestra el modelo general que sirve como guía metodológica
+del proyecto.
 
 \begin{figure}[h]
-%\includegraphics[width=8cm]{VDI.PNG}
 \centering
-\caption{VDI-2206 Modelo general para diseño de sistemas mecatrónicos}
-\label{fig:vdi-modelo}
+%\includegraphics[width=0.8\textwidth]{img/vdi-2206.png}
+\caption{VDI-2206: modelo general para el diseño de sistemas mecatrónicos.}
+\label{fig:vdi2206}
 \end{figure}
 
 \begin{itemize}
-    \item \textbf{Diseño del sistema} El propósito es establecer un concepto solución el cual describa las principales características operativas físicas y lógicas del producto. % para ello la función global de un sistema se descompone en subfunciones principales.
-    \item \textbf{Diseño del dominio específico} - En esta parte se requieren interpretaciones y cálculos más estrictos con el fin de garantizar el correcto desempeño de la función principal.
-    \item \textbf{Integración del sistema} -los resultados obtenidos  se integran con el fin de conformar un sistema global. Esta integración permite el análisis de las interacciones entre los componentes, garantizando que el comportamiento conjunto del sistema responda a los objetivos planteados.
-    \item \textbf{Validación y Verificación} - El progreso logrado con el diseño debe ser verificado continuamente con base en el concepto de solución  y a los requisitos establecidos.
-    \item \textbf{Modelado y análisis del modelo} - Las fases descritas se apoyan a través del uso de modelos y herramientas asistidas por computadora para la simulación del sistema.
+    \item \textbf{Diseño del sistema}: establece el concepto solución y define la
+    arquitectura funcional y física del producto.
+    \item \textbf{Diseño del dominio específico}: detalla los subsistemas por disciplina
+    (mecánica, electrónica, control e informática) con análisis y cálculos de soporte.
+    \item \textbf{Integración del sistema}: acopla los resultados de cada dominio para
+    obtener un sistema global coherente y operable.
+    \item \textbf{Validación y verificación}: compara el desempeño del prototipo contra
+    los requerimientos definidos.
+    \item \textbf{Modelado y análisis}: usa herramientas asistidas por computadora para
+    simular, ajustar y justificar decisiones de diseño.
 \end{itemize}
 
 \subsection{Diagramas FBS}
-
-
-
 
 \subsection{Metodología IDEF-0}
 
