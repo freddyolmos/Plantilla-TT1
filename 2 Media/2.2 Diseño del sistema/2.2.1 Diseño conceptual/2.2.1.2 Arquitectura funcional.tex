@@ -1,49 +1,54 @@
 \subsection{Arquitectura funcional}
 La arquitectura funcional del sistema se ilustra mediante una estructura FBS
-\renewcommand{\arraystretch}{0.7} % compacta filas
+
+\renewcommand{\arraystretch}{0.7}
 \begin{table}[H]
 	\centering
-	\caption{Funciones y subfunciones del SM}
+	\caption{Funciones y subfunciones del Sistema Mecatrónico de Entrenamiento}
 	\begin{tabular}{l}
 		\toprule
-\textbf{Función principal: Preparar Cubo para Entrenamiento} \\ \hline
+\textbf{Función principal (A-0): Configurar Cubo para Entrenamiento F2L} \\ \midrule
+
 1.0 \; Gestionar energía \\ 
 \hspace{0.5cm} 1.1 \; Obtener energía \\
-\hspace{0.5cm} 1.2 \; Distribuir energía \\
-\hspace{0.5cm} 1.3 \; Acondicionar energía \\ \hline
-2.0 \; Gestionar información \\
-\hspace{0.5cm} 2.1 \; Gestionar Interacción con Usuario\\
-\hspace{1cm} 2.1.1 \; Recibir Selección de Algoritmo \\
-\hspace{1cm} 2.1.2 \; Mostrar Estado del Sistema \\
-\hspace{1cm} 2.1.3 \; Procesar datos \\
-\hspace{0.5cm} 2.2 \; Determinar Estado del Cubo \\
-\hspace{1cm} 2.2.2 \; Adquirir Datos del Cubo \\
-\hspace{1cm} 2.2.3 \; Interpretar Datos \\
-\hspace{1cm} 2.2.4 \; Construir Modelo Virtual \\
-\hspace{0.5cm} 2.3 \; Tomar decisiones: Calcular Secuencia de Movimientos \\
-\hspace{1cm} 2.3.1 \; Obtener Algoritmo Objetivo \\
-\hspace{1cm} 2.3.1 \; Calcular Algoritmo Inverso \\
-\hspace{1cm} 2.3.2 \; Traducir Algoritmo a Comandos \\ \hline
-3.0 \; Proteger y soportar el sistema \\
-\hspace{0.5cm} 3.1 \; Soporte de actuadores \\
-\hspace{0.5cm} 3.2 \; Proteger cableado y dispositivos electrónicos \\\hline
-4.0 \; Entorno de Visión \\
-\hspace{0.5cm} 4.1 \; Posición de cámara \\
-\hspace{0.5cm} 4.2 \; Posición de sensores \\
-\hspace{0.5cm} 4.3 \; Iluminación \\\hline
-5.0 \; Manipular Físicamente el Cubo \\
-\hspace{0.5cm} 5.1 \; Sujetar Cubo \\
-\hspace{0.5cm} 5.2 \; Rotar Caras \\
-\hspace{0.5cm} 5.3 \; Liberar Cubo \\\hline
-\end{tabular}%
+\hspace{0.5cm} 1.2 \; Acondicionar energía \\
+\hspace{0.5cm} 1.3 \; Distribuir energía \\ \midrule
+
+2.0 \; Gestionar información y control \\ 
+\hspace{0.5cm} 2.1 \; Interactuar con el usuario \\
+\hspace{1cm} 2.1.1 \; Recibir selección de caso F2L \\
+\hspace{1cm} 2.1.2 \; Mostrar estado del sistema \\
+\hspace{0.5cm} 2.2 \; Gestionar modelo lógico del cubo \\
+\hspace{1cm} 2.2.1 \; Inicializar estado resuelto \\
+\hspace{1cm} 2.2.2 \; Actualizar estado del cubo \\
+\hspace{0.5cm} 2.3 \; Planificar secuencia de movimientos \\
+\hspace{1cm} 2.3.1 \; Obtener algoritmo objetivo \\
+\hspace{1cm} 2.3.2 \; Calcular algoritmo inverso \\
+\hspace{1cm} 2.3.3 \; Traducir algoritmo a comandos \\ \midrule
+
+3.0 \; Manipular físicamente el cubo \\ 
+\hspace{0.5cm} 3.1 \; Sujetar el cubo \\
+\hspace{0.5cm} 3.2 \; Rotar caras del cubo \\
+\hspace{0.5cm} 3.3 \; Liberar el cubo \\ \midrule
+
+4.0 \; Proteger y soportar el sistema \\ 
+\hspace{0.5cm} 4.1 \; Soportar actuadores \\
+\hspace{0.5cm} 4.2 \; Proteger componentes electrónicos \\
+\hspace{0.5cm} 4.3 \; Garantizar seguridad del usuario \\ \midrule
+
+5.0 \; Supervisar operación y seguridad \\ 
+\hspace{0.5cm} 5.1 \; Detectar atascos mecánicos \\
+\hspace{0.5cm} 5.2 \; Ejecutar paro de emergencia \\
+
+
+\bottomrule
+\end{tabular}
 \end{table}
-\renewcommand{\arraystretch}{1.0} % vuelve al valor normal
-
-
+\renewcommand{\arraystretch}{1.0}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[height=\textwidth,angle=90]{img/idef-0-cubo.pdf} % o .png
+    \includegraphics[height=0.65\textheight,angle=90]{img/idef-0-cubo.pdf}
     \caption{Diagrama IDEF-0 del cubo}
     \label{fig:idef0cubo}
 \end{figure}
