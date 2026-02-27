@@ -29,49 +29,50 @@ declaración de valor y unidades.\\
 %\subsection{Requerimientos}
 Se convierten las necesidades en requerimientos medibles
 
-\begin{table}[H]
-\centering
-\caption{Tabla de Requisitos del Sistema Propuesto}
-\label{tab:requisitos_sistema}
-\small
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{|>{\centering\arraybackslash}p{1.2cm}|p{8.8cm}|>{\centering\arraybackslash}p{3.2cm}|}
-\hline
-\textbf{No.} & \textbf{Requerimiento} & \textbf{Rango} \\ \hline
+\begin{table}[h]
+    \scriptsize
+    \centering
+    \caption{Tabla de Requisitos del Sistema Propuesto}
+    \label{tab:requisitos_sistema}
+    \begin{tabular}{p{5mm} p{95mm} p{30mm}}
+        \toprule
+        \textbf{No.} & \textbf{Requerimiento} & \textbf{Rango} \\ \midrule
 
-R01 & El sistema debe configurar automáticamente casos de entrenamiento F2L a partir de un cubo resuelto. & $\geq$ 10 casos \\ \hline
+        R\textsubscript{01} & El sistema debe configurar automáticamente casos de entrenamiento F2L a partir de un cubo resuelto. & $\geq$ 10 casos \\
 
-R02 & El robot debe reproducir un mismo caso sin variaciones que afecten la práctica del usuario. & Error angular $\leq \pm$ 2$^\circ$ \\ \hline
+        R\textsubscript{02} & El robot debe reproducir un mismo caso sin variaciones que afecten la práctica del usuario. & Error angular $\leq \pm 2^\circ$ \\
 
-R03 & El tiempo máximo para configurar un caso no debe exceder el límite establecido. & $\leq$ 30 s \\ \hline
+        R\textsubscript{03} & El tiempo máximo para configurar un caso no debe exceder el límite establecido. & $\leq$ 3 min \\
 
-R04 & El sistema debe operar sin provocar daños físicos al cubo. & $\geq$ 300 ciclos sin daño \\ \hline
+        R\textsubscript{04} & El sistema debe operar sin provocar daños físicos al cubo. & $\geq$ 50 ciclos \\
 
-R05 & El sistema debe contar con un mecanismo de referencia para cada eje. & Error de reposicionamiento $\leq$ 1$^\circ$ \\ \hline
+        R\textsubscript{05} & El sistema debe contar con un mecanismo de referencia para cada eje. & Error $\leq 1^\circ$ \\
 
-R06 & El robot debe detectar atascos mecánicos y detenerse automáticamente. & Tiempo de respuesta $\leq$ 500 ms \\ \hline
+        R\textsubscript{06} & El robot debe detectar atascos mecánicos y detenerse automáticamente. & $\leq$ 500 ms \\
 
-R07 & El sistema debe soportar operación continua sin sobrecalentamiento. & $\geq$ 60 min \\ \hline
+        R\textsubscript{07} & El sistema debe soportar operación continua sin sobrecalentamiento. & $\geq$ 60 min \\
 
-R08 & La estructura mecánica debe minimizar vibraciones que afecten la precisión. & Vibración $\leq$ valor a definir \\ \hline
+        R\textsubscript{08} & La estructura mecánica debe minimizar vibraciones que afecten la precisión del sistema. & Valor a definir \\
 
-R09 & El sistema debe incorporar un paro de emergencia. & Activación inmediata \\ \hline
+        R\textsubscript{09} & El sistema debe incorporar un mecanismo de paro de emergencia. & Activación inmediata \\
 
-R10 & Las partes móviles no deben representar riesgo para el usuario. & Sin puntos de atrapamiento \\ \hline
+        R\textsubscript{10} & Las partes móviles no deben representar riesgo para el usuario. & Sin atrapamientos \\
 
-R11 & El robot debe permitir control mediante una aplicación móvil. & Comunicación BLE o WiFi \\ \hline
+        R\textsubscript{11} & El robot debe permitir control mediante una aplicación móvil. & BLE o WiFi \\
 
-R12 & La aplicación debe registrar métricas de entrenamiento. & $\geq$ 4 variables \\ \hline
+        R\textsubscript{12} & La aplicación debe registrar métricas de entrenamiento. & $\geq$ 4 variables \\
 
-R13 & El usuario debe poder seleccionar manualmente el caso a practicar. & 100\% funcional \\ \hline
+        R\textsubscript{13} & El usuario debe poder seleccionar manualmente el caso a practicar. & 100\% funcional \\
 
-R14 & El sistema debe almacenar el historial de sesiones. & $\geq$ 50 sesiones \\ \hline
+        R\textsubscript{14} & El sistema debe almacenar el historial de sesiones. & $\geq$ 50 sesiones \\
 
-R15 & El costo total del prototipo no debe exceder el presupuesto definido. & $\leq$ \$7,000 MXN \\ \hline
+        R\textsubscript{15} & El costo total del prototipo no debe exceder el presupuesto definido. & $\leq$ \$7,000 MXN \\
 
-\end{tabular}
+        \bottomrule
+    \end{tabular}
 \end{table}
 \FloatBarrier
+
 
 
 \begin{table}[h]
